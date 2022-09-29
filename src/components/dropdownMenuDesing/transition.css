@@ -1,0 +1,35 @@
+.menu {
+  width: 100%;
+}
+
+/* 1 */
+.menu-1-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-1-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+.meny-1-exit {
+  position: absolute;
+}
+.menu-1-exit-active {
+  transform: translateX(-110%);
+}
+/* 2 */
+
+.menu-2-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-2-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+.meny-2-exit {
+  position: absolute;
+}
+.menu-2-exit-active {
+  transform: translateX(-110%);
+}

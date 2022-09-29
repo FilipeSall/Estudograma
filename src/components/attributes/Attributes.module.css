@@ -1,0 +1,14 @@
+
+.list{
+    margin: 2% 0%;
+    padding: 1%;
+}
+
+.list > li {
+    margin:0.5%
+}
+
+
+.farList{
+    margin-left: 5%;
+}

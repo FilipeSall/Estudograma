@@ -1,0 +1,39 @@
+.liDropdown{
+    opacity: 0;
+    animation: animeDown 0.3s forwards;
+}
+
+.disabled{
+    display:none;
+}
+
+.btnLateralDropdown{
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    width: 100%;
+    background-color: var(--corBrancaOpaca);
+}
+
+#fundamentos{
+    display:block;
+}
+
+#separacaoConteudo{
+    display:block;
+}
+
+
+@keyframes animeDown {
+    0%{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

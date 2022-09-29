@@ -1,0 +1,103 @@
+.header {
+  background-color: #2c2c2c;
+  min-height: 10vh;
+  width: 100vw;
+  color: whitesmoke;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 1px 1px 3px #2c2c2c;
+}
+
+.clock {
+  font-size: 2rem;
+  width: 10vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: context-menu;
+  user-select: none;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
+  color: #2c2c2c;
+  text-shadow: 1px 1px 1px grey;
+  font-family: 'antonio-bold';
+}
+
+.navBar > ul {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.navItem {
+  list-style: none;
+  transition: 0.5s;
+  margin: 0 1rem;
+}
+
+.navItem > button {
+  border: none;
+  cursor: pointer;
+  width: 15vw;
+  height: 7vh;
+  background-color: inherit;
+  color: inherit;
+  font-family: 'antonio';
+  font-size: 1.2rem;
+  user-select: none;
+  border-radius: 4px;
+  background: #171717;
+  text-shadow: 1px 1px 1px grey;
+}
+
+.navItem > button:disabled{
+  cursor: not-allowed;
+}
+
+.navItem > button:hover {
+  filter: brightness(1.7);
+}
+
+.navItem span {
+  margin-right: 0.5rem;
+}
+
+.menuItens {
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  transition: background 500ms;
+  padding: 2rem;
+  margin: 0.2rem 0rem;
+  color: inherit;
+  text-decoration: none;
+  background-color: #171717;
+  border-radius: 8px;
+}
+
+.menuItens:hover {
+  filter: brightness(1.5);
+}
+
+
+@media only screen and (max-width: 868px){
+    .header{
+      flex-direction: column;
+      height: 25vh;
+    }
+
+    .clock{
+      width: 25vw;
+    }
+
+    .navItem > button{
+      width: 25vw;
+    }
+
+}

@@ -1,0 +1,117 @@
+.menu {
+  width: 100%;
+}
+
+/* 1 */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all 500ms ease;
+}
+.meny-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+}
+
+/*2*/
+.menu-secondary-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+  .menu-secondary-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .meny-secondary-exit {
+  position: absolute;
+  }
+  .menu-secondary-exit-active {
+    transform: translateX(110%);
+  }
+
+/* 3*/
+.menu-third-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+  .menu-third-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-third-exit {
+  position: absolute;
+  }
+  .menu-third-exit-active {
+    transform: translateX(110%);
+  }
+  
+  /*4 */
+  .menu-four-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+  .menu-four-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-four-exit {
+  position: absolute;
+  }
+  .menu-four-exit-active {
+    transform: translateX(110%);
+  }
+
+  /* 5 */
+  .menu-five-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+  .menu-five-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-five-exit {
+  position: absolute;
+  }
+  .menu-five-exit-active {
+    transform: translateX(110%);
+  }
+
+
+  /* 6 */
+  .menu-six-enter {
+    position: absolute;
+    transform: translateX(110%);
+  }
+  .menu-six-enter-active {
+    transform: translateX(0%);
+    transition: all 500ms ease;
+  }
+  .menu-six-exit {
+  position: absolute;
+  }
+  .menu-six-exit-active {
+    transform: translateX(110%);
+  }
+
+    /* 7 */
+    .menu-seven-enter {
+        position: absolute;
+        transform: translateX(110%);
+      }
+      .menu-seven-enter-active {
+        transform: translateX(0%);
+        transition: all 500ms ease;
+      }
+      .menu-seven-exit {
+      position: absolute;
+      }
+      .menu-seven-exit-active {
+        transform: translateX(110%);
+      }
+    

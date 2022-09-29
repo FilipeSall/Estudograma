@@ -1,0 +1,49 @@
+.html{
+    width: 25%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 1px 1px black);
+    background-image: url('../../common/assets/images/techIcons/html-5.png');
+    animation: animeLeft 0.5s forwards;
+}
+.css{
+    width: 25%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 1px 1px black);
+    background-image: url('../../common/assets/images/techIcons/css-3.png');
+    animation: animeLeft 0.5s forwards;
+}
+
+.javascript{
+    width: 25%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 1px 1px black);
+    background-image: url('../../common/assets/images/techIcons/newJs.png');
+    animation: animeLeft 0.5s forwards;
+}
+
+.typescript{
+    width: 25%;
+    height: 20vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0px 1px 1px black);
+    background-image: url('../../common/assets/images/techIcons/typescrip.png');
+    animation: animeLeft 0.5s forwards;
+}
+
+@keyframes animeLeft {
+    0%{
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
