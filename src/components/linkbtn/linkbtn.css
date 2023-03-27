@@ -64,7 +64,7 @@
 
 @media screen and (max-width:650px) {
     .active{
-        width: 100%;
+        width: 95%;
         background-color: var(--red);
     }
     .active::before{

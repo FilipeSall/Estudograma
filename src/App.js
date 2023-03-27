@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import MainSection from "./components/MainSection/MainSection";
 import Header from "./components/Header/Header";
 
@@ -10,10 +10,6 @@ function App() {
         <Header />
         <MainSection />
       </div>
-      <Routes>
-        
-        <Route path='/front-end'  />
-      </Routes>
     </BrowserRouter>
   );
 }

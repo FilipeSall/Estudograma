@@ -40,6 +40,7 @@ function Header() {
   const handleClick = (index) => {
     setButtons((prevState) => {
       return prevState.map((button, i) => {
+        
         if (i === index) {
           return {
             ...button,
