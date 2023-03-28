@@ -127,9 +127,11 @@
     border-radius: 0;
   }
   .weather-info {
-    width: 70%;
+    width: 80vw;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
-  .weather-img{
+  .weather-img {
     border-radius: 0;
   }
 }
