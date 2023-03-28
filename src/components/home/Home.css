@@ -4,6 +4,7 @@
     justify-content: space-evenly;
     padding: 24px;
     height: 100%;
+    animation: animeLeft .3s ease forwards;
 }
 
 
@@ -12,5 +13,18 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 15px;
+    }
+}
+
+
+@keyframes animeLeft {
+    0%{
+        margin-left: -15px;
+        opacity: 0;
+    }
+    100%{
+        margin-left: 0;
+        opacity: 1;
     }
 }

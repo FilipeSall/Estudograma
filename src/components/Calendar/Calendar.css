@@ -10,6 +10,10 @@
     position: relative;
   }
 
+  .calendar::-webkit-scrollbar{
+    display: none;
+  }
+
   .calendar-animation {
     position: absolute;
     top: 0;
@@ -26,7 +30,7 @@
     width: 100%;
     border-collapse: collapse;
     text-align: center;
-    box-shadow: 0 1px 1px var(--orange);
+    box-shadow: 0 2px 1px var(--orange);
   }
   
   .calendar-header {
@@ -107,25 +111,33 @@
     background-color: var(--blue);
   }
 
+  .slide-right{
+    animation: animeRight .2s forwards;
+  }
+
+  .slide-left{
+    animation: animeLeft .2s forwards;
+  }
+
+
   @keyframes animeLeft {
     0%{
-        margin-left: -15px;
+        transform: translateX(-50%);
         opacity: 0;
     }
     100%{
-        margin-left:0;
+        transform: translateX(0%);
         opacity: 1;
     }
   }
 
-  
   @keyframes animeRight {
     0%{
-        margin-right: -15px;
+        transform: translateX(50%);
         opacity: 0;
     }
     100%{
-        margin-right:0;
+        transform: translateX(0%);
         opacity: 1;
     }
   }
@@ -133,7 +145,7 @@
 
   @media screen and (max-width:768px) {
     .calendar{
-        width: 99vw;
+        width: 100vw;
     }
   }
 

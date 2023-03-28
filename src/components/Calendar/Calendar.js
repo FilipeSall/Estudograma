@@ -16,12 +16,15 @@ function Calendar() {
   const handlePrevMonthClick = () => {
     setCurrentMonth(currentMonth - 1);
     setDate(new Date(date.getFullYear(), date.getMonth() - 1));
-    setAnimationClass("slide-right");
+    setAnimationClass("slide-left");
+    setTimeout(() => setAnimationClass(""), 200);
   };
 
   const handleNextMonthClick = () => {
     setCurrentMonth(currentMonth + 1);
     setDate(new Date(date.getFullYear(), date.getMonth() + 1));
+    setAnimationClass("slide-right");
+    setTimeout(() => setAnimationClass(""), 200);
   };
 
   const renderCalendar = () => {
@@ -98,7 +101,7 @@ function Calendar() {
           {<FcNext />}
         </button>
       </div>
-      <table>
+      <table className={`${animationClass}`}>
         <thead>
           <tr>
             <th>Dom</th>

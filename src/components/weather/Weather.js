@@ -31,12 +31,7 @@ const Weather = () => {
         });
     };
 
-    // Atualiza a API a cada 1 minuto
-    const id = setInterval(getWeatherData, 60000);
-
-    return () => {
-      clearInterval(id);
-    };
+    getWeatherData();
   }, [city, apiKey]);
 
   useEffect(() => {
