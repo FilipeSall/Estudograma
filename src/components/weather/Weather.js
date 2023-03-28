@@ -14,7 +14,7 @@ const Weather = () => {
 
   useEffect(() => {
     // Define a URL da API com base na cidade selecionada e na chave da API
-    const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     // Faz uma solicitação GET para a API do OpenWeatherMap usando axios
     const getWeatherData = () => {
