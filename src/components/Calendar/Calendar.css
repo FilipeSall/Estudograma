@@ -8,7 +8,6 @@
     font-family: 'Open sans', sans-serif;
     overflow: auto;
     position: relative;
-    height: 55vh;
   }
 
   .calendar::-webkit-scrollbar{
