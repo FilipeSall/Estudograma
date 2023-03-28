@@ -57,7 +57,6 @@ function Calendar() {
     }
 
     const days = [];
-
     for (let i = 1; i <= monthDays[currentMonth]; i++) {
       const currentDate = new Date(currentYear, currentMonth, i);
       const isToday = currentDate.toDateString() === today.toDateString();

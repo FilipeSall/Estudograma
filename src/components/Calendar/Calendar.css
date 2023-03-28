@@ -8,6 +8,7 @@
     font-family: 'Open sans', sans-serif;
     overflow: auto;
     position: relative;
+    height: 55vh;
   }
 
   .calendar::-webkit-scrollbar{
@@ -146,6 +147,7 @@
   @media screen and (max-width:768px) {
     .calendar{
         width: 100vw;
+        height: 100%;
     }
   }
 
