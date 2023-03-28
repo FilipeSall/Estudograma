@@ -62,7 +62,7 @@
     }
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:768px) {
     .active{
         width: 95%;
         background-color: var(--red);

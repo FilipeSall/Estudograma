@@ -1,6 +1,16 @@
 .home__container{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: space-evenly;
     padding: 24px;
+    height: 100%;
+}
+
+
+@media screen and (max-width:768px) {
+    .home__container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }

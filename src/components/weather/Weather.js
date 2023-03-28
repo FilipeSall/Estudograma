@@ -17,18 +17,27 @@ const Weather = () => {
     const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     // Faz uma solicitação GET para a API do OpenWeatherMap usando axios
-    axios
-      .get(apiUrl)
-      .then((response) => {
-        // Atualiza o estado com os dados do clima retornados pela API
-        setWeatherData(response.data);
-      })
-      .catch((error) => {
-        // Registra o erro no console e define o estado de erro como true
-        console.log(error);
-        setError(true);
-      });
-  }, [city]);
+    const getWeatherData = () => {
+      axios
+        .get(apiUrl)
+        .then((response) => {
+          // Atualiza o estado com os dados do clima retornados pela API
+          setWeatherData(response.data);
+        })
+        .catch((error) => {
+          // Registra o erro no console e define o estado de erro como true
+          console.log(error);
+          setError(true);
+        });
+    };
+
+    // Atualiza a API a cada 1 minuto
+    const id = setInterval(getWeatherData, 60000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [city, apiKey]);
 
   useEffect(() => {
     // Obtém os dados climáticos com base na localização atual do usuário
@@ -48,7 +57,7 @@ const Weather = () => {
             setLoading(false);
           });
       },
-       // Caso não seja possível obter a localização, obtém os dados climáticos da cidade de Brasília
+      // Caso não seja possível obter a localização, obtém os dados climáticos da cidade de Brasília
       () => {
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Brasilia&appid=${apiKey}&units=metric`;
         axios
@@ -69,14 +78,14 @@ const Weather = () => {
   // Retorna a imagem animada de acordo com a condição climática
   const getWeatherImg = () => {
     const weatherCondition = weatherData?.weather[0].main;
-  
+
     switch (weatherCondition) {
       case "Thunderstorm":
         return "https://media.tenor.com/B14wu9T3Dp8AAAAC/storm-staring.gif";
       case "Drizzle":
         return "https://media.tenor.com/xQu_Gj4VDckAAAAC/good-morning-morning.gif";
       case "Rain":
-        return "https://media.tenor.com/mhg3aOcivSEAAAAC/dog-raining.gif";
+        return 'https://media.tenor.com/9pCiAd-nqIQAAAAC/bird-under-the-rain.gif';
       case "Snow":
         return "//ellehansendotcom.files.wordpress.com/2021/09/2020holidaydog1x1_v03_eh-1.gif";
       case "Atmosphere":
@@ -93,14 +102,14 @@ const Weather = () => {
   return (
     <div className="weather-container">
       {loading ? (
-        <div class="loading-container">
-          <i class="fas fa-spinner fa-pulse">
+        <div className="loading-container">
+          <i className="fas fa-spinner fa-pulse">
             <AiOutlineLoading3Quarters />
           </i>
           <p>Carregando...</p>
         </div>
       ) : error ? (
-        <div class="error-container">
+        <div className="error-container">
           <BiErrorAlt />
           <p>
             Houve um erro ao carregar os dados. Por favor, verifique sua conexão
