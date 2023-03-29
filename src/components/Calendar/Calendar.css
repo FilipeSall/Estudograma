@@ -119,6 +119,10 @@
     animation: animeLeft .2s forwards;
   }
 
+  .day.holiday div {
+    color: var(--orange);
+    font-weight: bold;
+  }
 
   @keyframes animeLeft {
     0%{

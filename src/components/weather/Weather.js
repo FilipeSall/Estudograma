@@ -10,6 +10,7 @@ const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
   const apiKey = "c55bb6fb08629a41d85df069e0ff191c";
 
   useEffect(() => {
