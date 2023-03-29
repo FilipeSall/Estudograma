@@ -18,17 +18,13 @@ function Calendar() {
   const [animationClass, setAnimationClass] = useState("");
   const [selectedDate, setSelectedDate] = useState(null);
   const [clickPosition, setClickPosition] = useState({ x: null, y: null });
-  const [selectedDateIsHoliday, setSelectedDateIsHoliday] = useState(false);
 
   const today = new Date();
-    console.log(selectedDateIsHoliday)
 
   useEffect(() => {
     const feriadosDoAno = getFeriadosByYear(year);
     setFeriados(feriadosDoAno);
   }, [year]);
-  
-
 
   // Obtém a data formatada para exibir no topo do calendário
   const formattedDate = new Date(
@@ -68,12 +64,12 @@ function Calendar() {
       currentDate,
       feriados,
       setSelectedDate,
-      setSelectedDateIsHoliday,
-      setClickPosition,
+      setClickPosition, 
       event
     );
+    const { clientX, clientY } = event; // captura a posição do mouse
+    setClickPosition({ x: clientX, y: clientY }); // define a posição do modal
   };
-
   return (
     <div className="calendar">
       <CalendarHeader
@@ -91,9 +87,9 @@ function Calendar() {
       />
       {selectedDate && (
         <Modal
-          onClose={() => setSelectedDate(null)}
-          x={clickPosition.x}
-          y={clickPosition.y}
+        onClose={() => setSelectedDate(null)}
+        x={clickPosition?.x ?? window.innerWidth / 2}
+        y={clickPosition?.y ?? window.innerHeight / 2}
         >
           <div className="modal-content">
             {selectedDate.isHoliday && (
@@ -121,7 +117,7 @@ function Calendar() {
                 </p>
               </>
             ) : (
-              <p>Não há feriados disponíveis</p>
+              <p>Não há feriados!</p>
             )}
           </div>
         </Modal>
