@@ -11,9 +11,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  
-  .todo-title {
+}
+
+.todo-title {
     font-size: 3rem;
     text-align: center;
     color: var(--black);
@@ -22,9 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-  }
+}
 
-  .todo-icon-text-wrapper {
+.todo-icon-text-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,24 +32,23 @@
     margin: 5px 0;
     padding: 5px;
     background-color: var(--white);
-  }
-  
-  .todo-icon-text-wrapper svg {
+}
+
+.todo-icon-text-wrapper svg {
     fill: var(--gray);
     width: 20px;
     height: 20px;
     margin-right: 10px;
-  }
+}
 
-  .todo-display {
-    list-style-type: none; 
+.todo-display {
+    list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
-  }
-  
+}
 
-  .todo-remove-button {
+.todo-remove-button {
     background-color: var(--red);
     color: var(--white);
     border: none;
@@ -57,76 +56,97 @@
     padding: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease-out;
-  }
-  
-  .todo-remove-button:hover {
+}
+
+.todo-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.todo-remove-button:hover {
     background-color: var(--orange);
-  }
-  
-  .todo-remove-button:active {
+}
+
+.todo-remove-button:active {
     background-color: var(--red);
     transform: scale(0.95);
     transition: background-color 0.1s ease-out, transform 0.1s ease-out;
-  }
+}
 
-  .todo-display li {
-    background-color: #FDFFFC; 
-    margin-bottom: 5px; 
+.todo-display li {
+    background-color: #FDFFFC;
+    margin-bottom: 5px;
     padding: 10px;
-    border-radius: 5px; 
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-size: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: opacity 0.3s ease-out;
-  }
-  
-  .todo-display li.remove-task-animation {
-    opacity: 0;
-  }
+}
 
-  .todo-add {
+.todo-display li.remove-task-animation {
+    opacity: 0;
+}
+
+.todo-add {
     display: flex;
     margin-top: 10px;
     width: 100%;
-  }
-  
-  .todo-input {
+}
+
+.todo-input {
     flex-grow: 1;
     border: none;
     background-color: transparent;
-    border-bottom: 2px solid #2F6690; 
+    border-bottom: 2px solid #2F6690;
     margin-right: 10px;
     font-size: 16px;
-  }
-  
-  .todo-input:focus {
+}
+
+.todo-input:focus {
     outline: none;
-  }
-  
-  .todo-input::placeholder {
-    color: #2F6690; 
-  }
-  
-  .todo-button {
-    background-color: #2F6690; 
-    color: #FDFFFC; 
+}
+
+.todo-input::placeholder {
+    color: #2F6690;
+}
+
+.todo-button {
+    background-color: #2F6690;
+    color: #FDFFFC;
     border: none;
-    border-radius: 5px; 
+    border-radius: 5px;
     padding: 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  .todo-button:hover {
+}
+
+.todo-button:hover {
     cursor: pointer;
-    background-color: #FA9500; 
-  }
-  
-  @media screen and (max-width: 768px) {
+    background-color: #FA9500;
+}
+
+@media screen and (max-width: 768px) {
     .todo-list {
-      width: 95vw;
-      margin: 5% 0;
+        width: 95vw;
+        margin: 5% 0;
     }
-   
-  }
+
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.todo-display li.new-item {
+    animation: fade-in 0.5s ease-out;
+}
