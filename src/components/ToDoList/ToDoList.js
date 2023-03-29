@@ -1,6 +1,7 @@
 import React from "react";
 import "./ToDoList.css";
-import { FaTrashAlt, FaTasks } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
+import { CgNotes } from "react-icons/cg";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 function TodoList() {
@@ -44,7 +45,7 @@ function TodoList() {
     return (
         <div className="todo-list">
             <h1 className="todo-title">
-                <FaTasks /> Lista de tarefas
+                <CgNotes color="#211A1E" /> Lista de tarefas
             </h1>
             <ul className="todo-display">
                 {tasks.map((task) => (
