@@ -125,9 +125,8 @@
   
   @media screen and (max-width: 768px) {
     .todo-list {
-      max-width: 95%;
+      width: 95vw;
+      margin: 5% 0;
     }
-    .todo-display li{
-        width: 70vw;
-    }
+   
   }
