@@ -21,12 +21,14 @@ function Calendar() {
   const [selectedDateIsHoliday, setSelectedDateIsHoliday] = useState(false);
 
   const today = new Date();
+    console.log(selectedDateIsHoliday)
 
   useEffect(() => {
     const feriadosDoAno = getFeriadosByYear(year);
     setFeriados(feriadosDoAno);
   }, [year]);
   
+
 
   // Obtém a data formatada para exibir no topo do calendário
   const formattedDate = new Date(
