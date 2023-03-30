@@ -32,11 +32,13 @@
 
 .nav__links-title {
   padding: 10px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 6px;
+  display: flex;
+  align-items: center;
 }
 
 .nav__links-title:hover {
@@ -51,6 +53,7 @@
 .inactiveNav {
   background-color: #161119;
   color: #fff;
+  border:1px solid #232028;
 }
 
 .nav__links-item {
@@ -61,7 +64,8 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
   animation: animeDown .3s forwards ease;
-  
+  font-size: 1rem;
+  gap: 8px;
 }
 
 .nav__links-item:hover {
@@ -149,17 +153,28 @@
 @media screen and (max-width:768px) {
   .nav__container{
     height: 50vh;
+    
+    justify-content: space-around;
+  }
+
+  .nav-img{
+    width: 50vw;
   }
 
   .nav__links-wrapper{
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
+    width: 50%;
+    flex-grow: 0;
   }
 
   .nav__links-title{
     font-size: 0.7rem;
+    width: 50vw;
   }
   .nav__links-item{
     font-size: 0.7rem;
+    
   }
 }

@@ -28,7 +28,7 @@ function Menu({ links, img, alt }) {
               className={`nav__links-title ${items[i].isActive ? 'activeNav' : 'inactiveNav'}`}
               onClick={() => handleItemClick(i)}
             >
-              {link.title}{items[i].isOpen === true ? <IoMdArrowDropup /> :<IoMdArrowDropdown /> }
+              {link.title}{items[i].isOpen === true ? <IoMdArrowDropdown size={38} /> :<IoMdArrowDropup size={38} /> }
             </h1>
             {items[i].isOpen &&
               link.dropdownItems.map((item, j) => (
