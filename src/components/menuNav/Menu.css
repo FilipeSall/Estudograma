@@ -32,7 +32,9 @@
 
 .nav__links-title {
   padding: 10px;
-  font-size: 20px;
+  width: 20vw;
+  height: 10vh;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -48,12 +50,20 @@
 .activeNav {
   background-color: #e85a4f;
   color: #fff;
+  border:2px solid #e85a4f;
+}
+
+
+.activeNav:hover{
+  background-color: #e85a4f;
+  transition: .3s ease;
+  border:2px solid #e85a4f;
 }
 
 .inactiveNav {
   background-color: #161119;
   color: #fff;
-  border:1px solid #232028;
+  border:2px solid #232028;
 }
 
 .nav__links-item {
@@ -64,8 +74,9 @@
   text-decoration: none;
   transition: background-color 0.3s ease;
   animation: animeDown .3s forwards ease;
-  font-size: 1rem;
+  font-size: 1.5rem;
   gap: 8px;
+
 }
 
 .nav__links-item:hover {
@@ -159,6 +170,7 @@
 
   .nav-img{
     width: 50vw;
+    object-fit: cover;
   }
 
   .nav__links-wrapper{
@@ -173,6 +185,7 @@
     font-size: 0.7rem;
     width: 50vw;
   }
+
   .nav__links-item{
     font-size: 0.7rem;
     

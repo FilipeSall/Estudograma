@@ -2,12 +2,11 @@
     padding: 24px;
     height: 100%;
     animation: animeLeft .3s ease forwards;
-    
 }
 
 .climeWeather__container{
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-evenly;
     height: 100%;
 }

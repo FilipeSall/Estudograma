@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import "./Menu.css";
 import { Link } from "react-router-dom";
 import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import useClickOutside from "../../hooks/useClickOutside";
 
 function Menu({ links, img, alt }) {
-  const [items, setItems] = useState(links.map(() => ({ isOpen: false, isActive: false })));
 
+  //Estadis iniciais
+  const [items, setItems] = useState(links.map(() => ({ isOpen: false, isActive: false })));
+  const dropdownRef = useRef(null);
+
+  //Função do click do Link do NaMenu, onde ele ativa o estado proprio e desativa os outros estados dos outros Links
   const handleItemClick = (index) => {
     setItems((prevItems) =>
       prevItems.map((item, i) => ({
@@ -15,20 +20,38 @@ function Menu({ links, img, alt }) {
     );
   };
 
+  //Clicar fora do componente, remove todos os estados de ativos
+  const handleClickOutside = () => {
+    setItems((prevItems) =>
+      prevItems.map((item) => ({
+        ...item,
+        isOpen: false,
+        isActive: false,
+      }))
+    );
+  };
+
+  //Custom hook para fechar o dropdown ao clicar fora do componente do useref
+  useClickOutside(dropdownRef, handleClickOutside);
+
   return (
     <nav className="nav__container">
-      <img className='nav-img' src={img} alt={alt} />
-      <div className="nav__links-wrapper">
+      <img className="nav-img" src={img} alt={alt} />
+      <div className="nav__links-wrapper" ref={dropdownRef}>
         {links.map((link, i) => (
-          <ul
-            className={`nav__links-container`}
-            key={i}
-          >
+          <ul className={`nav__links-container`} key={i}>
             <h1
-              className={`nav__links-title ${items[i].isActive ? 'activeNav' : 'inactiveNav'}`}
+              className={`nav__links-title ${
+                items[i].isActive ? "activeNav" : "inactiveNav"
+              }`}
               onClick={() => handleItemClick(i)}
             >
-              {link.title}{items[i].isOpen === true ? <IoMdArrowDropdown size={38} /> :<IoMdArrowDropup size={38} /> }
+              {link.title}
+              {items[i].isOpen === true ? (
+                <IoMdArrowDropdown size={34} />
+              ) : (
+                <IoMdArrowDropup size={34} />
+              )}
             </h1>
             {items[i].isOpen &&
               link.dropdownItems.map((item, j) => (
@@ -43,5 +66,6 @@ function Menu({ links, img, alt }) {
     </nav>
   );
 }
+
 
 export default Menu;

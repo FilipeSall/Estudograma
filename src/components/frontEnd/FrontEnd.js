@@ -19,11 +19,13 @@ function FrontEnd() {
                     text: 'HTML',
                     icon: <AiFillHtml5 />,
                     href: '/front-end/html',
+                    imgId:'html',
                 },
                 {
                     text: 'CSS',
                     icon: <FaCss3Alt />,
                     href: '/front-end/css',
+                    imgId:'css',
                 },
             ],
         },

@@ -8,11 +8,11 @@ function Home() {
 
   return (
     <section className='home__container'>
-       <div className='climeWeather__container'>
-         <Weather />
-         <Calendar />
-       </div>
-       <TodoList />
+      <div className='climeWeather__container'>
+        <Weather />
+        <Calendar />
+      </div>
+      <TodoList />
     </section>
   )
 }
