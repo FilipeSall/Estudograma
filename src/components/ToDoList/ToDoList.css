@@ -150,3 +150,16 @@
 .todo-display li.new-item {
     animation: fade-in 0.5s ease-out;
 }
+
+@media screen and (max-width:786px) {
+    .todo-title{
+        font-size: 2rem;
+    }
+    .todo-add{
+        width: auto;
+    }
+    .todo-button{
+        width: 20vw;
+        font-size: 0.6rem;
+    }
+}

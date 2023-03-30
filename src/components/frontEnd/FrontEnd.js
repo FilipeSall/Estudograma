@@ -6,6 +6,7 @@ import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { BsFillBootstrapFill } from "react-icons/bs";
+import FrontEndImg from '../../assets/imgs/frontEndIndex.webp';
 
 function FrontEnd() {
 
@@ -34,7 +35,8 @@ function FrontEnd() {
                     icon: <IoLogoJavascript />,
                     herf:'/front-end/javascript'
                 }
-            ]
+            ],
+            isActive: false,
         },
         {
             title: 'Frameworks',
@@ -50,13 +52,14 @@ function FrontEnd() {
                     href: '/front-end/bootstrap',
                 },
             ],
+            isActive: false,
         },
     ]
 
 
     return (
         <section>
-            <Menu links={links} />
+            <Menu links={links} img={FrontEndImg} alt='Secção front-end' />
             <Routes>
                 <Route path='/html' element={<p>html5</p>} />
 
