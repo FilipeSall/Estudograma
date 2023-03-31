@@ -24,7 +24,9 @@ export const handleNextMonthClick = (currentMonth, year, setCurrentMonth, setYea
     setTimeout(() => setAnimationClass(""), 200);
   };
 
-  export const handleDayClick = (currentDate, Feriados, setSelectedDate, setClickPosition, event) => {
+  export const handleDayClick = (
+    setClickPosition, currentDate, Feriados, setSelectedDate, event, clickPosition) => {
+      console.log(clickPosition)
     const isHoliday = Feriados.some(
       (feriado) => feriado.date === currentDate.toISOString().slice(0, 10)
     );
@@ -33,5 +35,6 @@ export const handleNextMonthClick = (currentMonth, year, setCurrentMonth, setYea
       isHoliday: isHoliday,
     });
     setClickPosition({ x: event.clientX, y: event.clientY });
+    console.log(clickPosition)
   };
   

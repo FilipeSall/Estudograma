@@ -21,6 +21,8 @@ function Calendar() {
 
   const today = new Date();
 
+  console.log(clickPosition)
+
   useEffect(() => {
     const feriadosDoAno = getFeriadosByYear(year);
     setFeriados(feriadosDoAno);
@@ -34,6 +36,7 @@ function Calendar() {
     month: "long",
     year: "numeric",
   });
+
 
   //Move o calendario para o proximo mes ou para o anterior
   const handlePrevClick = () => {
@@ -57,19 +60,19 @@ function Calendar() {
       setAnimationClass
     );
   };
-
+  console.log(clickPosition)
   //Verifica se o dia clicado tem feriado abrindo um modal com as informações
   const handleDayClickWrapper = (currentDate, event) => {
     handleDayClick(
+      setClickPosition,
       currentDate,
       feriados,
       setSelectedDate,
-      setClickPosition, 
-      event
+      event,
+      clickPosition
     );
-    const { clientX, clientY } = event; // captura a posição do mouse
-    setClickPosition({ x: clientX, y: clientY }); // define a posição do modal
   };
+  
   return (
     <div className="calendar">
       <CalendarHeader
@@ -88,8 +91,8 @@ function Calendar() {
       {selectedDate && (
         <Modal
         onClose={() => setSelectedDate(null)}
-        x={clickPosition?.x ?? window.innerWidth / 2}
-        y={clickPosition?.y ?? window.innerHeight / 2}
+        x={clickPosition?.x ?? 0}
+        y={clickPosition?.y ?? 0}
         >
           <div className="modal-content">
             {selectedDate.isHoliday && (
