@@ -1,193 +1,58 @@
 .nav__container {
   display: flex;
   user-select: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #161119;
   color: #fff;
   padding: 10px;
-  animation: animeLeft .3s forwards ease; 
-}
-
-.nav-img {
-  max-width: 30vw;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.nav__links-wrapper {
-  display: flex;
-  flex-grow: 1;
-  margin-left: 20px;
-  margin-top: 5%;
-  justify-content: space-evenly;
-}
-
-.nav__links-container {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.nav__links-title {
-  padding: 10px;
-  width: 20vw;
-  height: 10vh;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-}
-
-.nav__links-title:hover {
-  background-color: #232028;
-}
-
-.activeNav {
-  background-color: #e85a4f;
-  color: #fff;
-  border:2px solid #e85a4f;
-}
-
-
-.activeNav:hover{
-  background-color: #e85a4f;
-  transition: .3s ease;
-  border:2px solid #e85a4f;
-}
-
-.inactiveNav {
-  background-color: #161119;
-  color: #fff;
-  border:2px solid #232028;
-}
-
-.nav__links-item {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  animation: animeDown .3s forwards ease;
-  font-size: 1.5rem;
+  animation: animeLeft 0.3s forwards ease;
+  max-width: 100vw;
+  height: 50%;
   gap: 8px;
-
+  width: 100%;
 }
 
-.nav__links-item:hover {
-  background-color: #232028;
-  border-radius: 4px;
+.links__nav-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
 }
+
+.shortcut__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-shadow: 1px 2px 2px var(--black);
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 10px;
+  backdrop-filter: blur(1px); 
+  width: 100%;
+}
+
 
 @keyframes animeLeft {
   0% {
-    opacity: 0;
-    transform: translateX(-10px);
+      opacity: 0;
+      transform: translateX(-10px);
   }
+
   100% {
-    opacity: 1;
-    transform: translateX(0);
+      opacity: 1;
+      transform: translateX(0);
   }
 }
 
-@keyframes animeDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.nav__links-container ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: relative;
-}
-
-.nav__links-container ul li {
-  position: relative;
-  margin: 0;
-  padding: 0;
-}
-
-.nav__links-container ul li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  color: #fff;
-}
-
-.nav__links-container ul li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-}
-
-.nav__links-container ul ul {
-  position: absolute;
-  top: 100%;
-  opacity: 0;
-  visibility: hidden;
-  background-color: #232028;
-  width: 200px;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
-}
-
-.nav__links-container ul ul li {
-  display: block;
-}
-
-.nav__links-container ul ul li a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  color: #fff;
-}
-
-.nav__links-container ul ul li:hover > ul {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-@media screen and (max-width:768px) {
-  .nav__container{
-    height: 50vh;
-    
-    justify-content: space-around;
+@media screen and (max-width: 768px) {
+  .nav__container {
+      height: 50%;
+      justify-content: space-around;
   }
 
-  .nav-img{
-    width: 50vw;
-    object-fit: cover;
-  }
-
-  .nav__links-wrapper{
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 50%;
-    flex-grow: 0;
-  }
-
-  .nav__links-title{
-    font-size: 0.7rem;
-    width: 50vw;
-  }
-
-  .nav__links-item{
-    font-size: 0.7rem;
-    
-  }
 }

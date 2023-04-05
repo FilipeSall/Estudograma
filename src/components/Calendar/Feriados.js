@@ -25,8 +25,8 @@ const getFeriadosByYear = (year) => {
       date: `${year}-10-15`,
       icon: <TiMortarBoard />,
     },
-    { name: "Sexta-feira Santa", date: `${year}-04-14`, icon: <FaCross /> },
-    { name: "Páscoa", date: `${year}-04-16`, icon: <FaEgg /> },
+    { name: "Sexta-feira Santa", date: `${year}-04-07`, icon: <FaCross /> },
+    { name: "Páscoa", date: `${year}-04-09`, icon: <FaEgg /> },
     { name: "Dia do Trabalho", date: `${year}-05-01`, icon: <MdWork /> },
     { name: "Corpus Christi", date: `${year}-06-15`, icon: <FaCross  /> },
     {

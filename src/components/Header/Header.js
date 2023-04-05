@@ -42,16 +42,33 @@ function Header() {
       },
     ]);
 
+  const isFrontEndSubRoute = (path) => {
+    return path.startsWith("/front-end");
+  };
+
+  const isBackEndSubRoute = (path) => {
+    return path.startsWith("/back-end");
+  };
+
+  const isUiUxSubRoute = (path) => {
+    return path.startsWith("/ui-ux");
+  };
+
   useEffect(() => {
     setButtons((prevState) => {
       return prevState.map((button) => {
         return {
           ...button,
-          state: button.link === location.pathname,
+          state:
+            button.link === location.pathname ||
+            (button.link === "/front-end" && isFrontEndSubRoute(location.pathname)) ||
+            (button.link === "/back-end" && isBackEndSubRoute(location.pathname)) ||
+            (button.link === "/ui-ux" && isUiUxSubRoute(location.pathname)),
         };
       });
     });
   }, [location.pathname]);
+
 
   const handleClick = (index) => {
     setButtons((prevState) => {

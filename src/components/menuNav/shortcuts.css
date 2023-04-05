@@ -1,0 +1,30 @@
+.shortcut__img-container{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 40%;
+    width: 33%;
+    border-radius: 4px;
+    transition: .3s ease;
+    text-align: center;
+}
+
+.shortcut__img-container:hover{
+    opacity: 0.8;
+}
+
+.coolors {
+    background-image: url(../../assets/imgs/coolors.webp);
+}
+
+.svgrepo{
+    background-image: url(../../assets/imgs/svgrepo.webp);
+}
+
+.removebg{
+    background-image: url(../../assets/imgs/removebg.webp);
+}
+
+.squoosh{
+    background-image: url(../../assets/imgs/squoosh.webp);
+}

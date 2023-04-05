@@ -1,5 +1,6 @@
 .App{
     width: 100vw;
+    height: 100vh;
 }
 
 @media screen and (max-width:768px) {
@@ -9,5 +10,7 @@
         align-items: center;
         justify-content: center;
         margin: 0 auto;
+        height: auto;
     }
 }
+

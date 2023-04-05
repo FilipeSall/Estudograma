@@ -6,10 +6,10 @@ import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { BsFillBootstrapFill } from "react-icons/bs";
-import FrontEndImg from '../../assets/imgs/frontEndIndex.webp';
+import HtmlPage from '../notebookPages//html/HtmlPage.js';
+import NavLinks from '../navLinks/NavLinks';
 
 function FrontEnd() {
-
 
     const links = [
         {
@@ -58,15 +58,15 @@ function FrontEnd() {
         },
     ]
 
-
     return (
-        <section>
-            <Menu links={links} img={FrontEndImg} alt='Secção front-end' />
+        <>
+            <Menu links={links} alt='Secção front-end' />
+            <NavLinks links={links} />
             <Routes>
-                <Route path='/html' element={<p>html5</p>} />
-
+                <Route path='/html' element={<HtmlPage />} />
             </Routes>
-        </section>
+
+        </>
     );
 }
 
