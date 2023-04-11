@@ -36,7 +36,7 @@ function HeaderNotebook({ img, alt, folders }) {
                 </Link>
               </div>
               {openedFolderIndex === i && (
-                <ul>
+                <ul className='subfolder__container'>
                   {folder.subfolders.map((subPast, j) => (
                     <li key={j} className='subfolder'>
                       <a href={subPast.path}>{subPast.title}</a>

@@ -1,71 +1,84 @@
 .header__notebook-container {
     width: 100%;
     display: flex;
-    height: 15%;
     justify-content: space-around;
-    margin: 1% 0;
     align-items: center;
+    padding: 1% 0;
+    flex-wrap: wrap;
 }
 
 .icon__header-notebook {
-    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 8px;
     height: 25vh;
 }
 
-.icon__header-notebook>img {
+.icon__header-notebook img {
     width: 10vw;
+    object-fit: contain;
 }
 
 .folder__container {
     list-style: none;
-    width: 80%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    height: 100%;
     align-items: flex-start;
-    border-radius: 8px;
-    height: 15vh;
+    width: 80%;
 }
 
-.folder__container>li {
+.folder__container li {
     display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
     padding: 8px;
-
+    width: 100%;
 }
 
 .folder {
     display: flex;
-    height: 100%;
     align-items: center;
     width: 100%;
     font-size: 1.2rem;
     cursor: pointer;
     text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .folder:hover {
     background-color: var(--linen);
 }
 
-.folder > a {
+.folder>a {
     text-decoration: none;
     color: inherit;
     margin-left: 8px;
+}
+
+.subfolder__container {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .subfolder {
     cursor: pointer;
     animation: animeDown 0.3s forwards;
     list-style: none;
+    transition: background-color 0.3s ease;
 }
 
 .subfolder:hover {
     background-color: var(--linen);
+}
+
+.subfolder a {
+    text-decoration: none;
+    color: inherit;
 }
 
 @keyframes animeDown {
@@ -75,14 +88,17 @@
     }
 
     100% {
-        opacity: inherit;
-        transform: translateY(inherit);
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-@media screen and (max-width:786px) {
-    .folder__container{
-        flex-wrap: wrap;
-        height: fit-content;
+@media screen and (max-width: 786px) {
+    .header__notebook-container {
+        flex-direction: column;
+    }
+    .icon__header-notebook img  {
+        height: auto;
+        width: 25vw;
     }
 }

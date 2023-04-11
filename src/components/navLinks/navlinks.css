@@ -1,10 +1,10 @@
 .nav__links-container {
     list-style: none;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: start;
-    animation: animeLeft .3s forwards ease;
+    justify-content: flex-start;
+    align-items: center;
+    animation: animeLeft 0.3s forwards ease;
     margin: 10px;
 }
 
@@ -18,9 +18,10 @@
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border: none;
     border-radius: 4px;
+    text-align: center;
 }
 
 .nav__links-wrapper {
