@@ -9,10 +9,6 @@
     text-align: center;
 }
 
-.shortcut__img-container:hover{
-    opacity: 0.8;
-}
-
 .coolors {
     background-image: url(../../assets/imgs/coolors.webp);
 }
@@ -27,4 +23,27 @@
 
 .squoosh{
     background-image: url(../../assets/imgs/squoosh.webp);
+}
+
+.formik{
+    background-image: url(../../assets/imgs/formik.webp);
+}
+
+.reacticons{
+    background-image: url(../../assets/imgs/reacticons.webp);
+}
+
+.toastify{
+    background-image: url(../../assets/imgs/toastify.webp);
+}
+
+.router{
+    background-image: url(../../assets/imgs/router.webp);
+}
+
+@media screen and (max-width:768px) {
+    .shortcut__img-container{
+       height: 30vh;
+       width: 90vw;
+    }
 }

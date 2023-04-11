@@ -18,7 +18,9 @@
     transition: background-color 0.3s ease;
     display: flex;
     align-items: center;
-    border:none;
+    justify-content: center;
+    border: none;
+    border-radius: 4px;
 }
 
 .nav__links-wrapper {
@@ -28,7 +30,7 @@
     height: 40%;
     gap: 8px;
     justify-content: space-evenly;
-  }
+}
 
 .nav__links-title:hover {
     background-color: #232028;
@@ -38,6 +40,7 @@
     background-color: #e85a4f;
     color: #fff;
     border: 2px solid #e85a4f;
+    border-radius: 4px;
 }
 
 .activeNav:hover {
@@ -50,6 +53,7 @@
     background-color: #161119;
     color: #fff;
     border: 2px solid #232028;
+    border-radius: 4px;
 }
 
 .nav__links-item {
@@ -60,8 +64,8 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
     animation: animeDown 0.3s forwards ease;
-    align-items: center;
     gap: 4px;
+    border-radius: 4px;
 }
 
 .nav__links-item:hover {
@@ -93,61 +97,6 @@
     }
 }
 
-.nav__links-container ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    position: relative;
-}
-
-.nav__links-container ul li {
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-.nav__links-container ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    color: #fff;
-}
-
-.nav__links-container ul li:hover>ul {
-    opacity: 1;
-    visibility: visible;
-}
-
-.nav__links-container ul ul {
-    position: absolute;
-    top: 100%;
-    opacity: 0;
-    visibility: hidden;
-    background-color: #232028;
-    width: 200px;
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-}
-
-.nav__links-container ul ul li {
-    display: block;
-}
-
-.nav__links-container ul ul li a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    color: #fff;
-}
-
-.nav__links-container ul ul li:hover>ul {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
 @media screen and (max-width: 768px) {
     .nav__container {
         height: 50%;
@@ -168,7 +117,7 @@
 
     .nav__links-title {
         font-size: 0.7rem;
-        width: 50vw;
+        width: 90vw;
     }
 
     .nav__links-item {

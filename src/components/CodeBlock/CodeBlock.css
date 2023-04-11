@@ -1,0 +1,89 @@
+.syntax-highlighter-container .code-block {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.syntax-highlighter-container .code-block pre {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.syntax-highlighter-container .code-block code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.syntax-highlighter-container .tag {
+    color: #FFA500;
+}
+
+.syntax-highlighter-container .attr {
+    color: #00FF00;
+}
+
+
+.code-block {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.code-block pre {
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+}
+
+.code-block code {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 5px 0 0;
+    cursor: pointer;
+}
+
+.copy-button:hover {
+    background-color: #3f9f40;
+}
+
+.copied-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.copied-message.show {
+    opacity: 1;
+}
+
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+

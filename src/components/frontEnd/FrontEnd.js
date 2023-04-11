@@ -19,15 +19,14 @@ function FrontEnd() {
                     text: 'HTML',
                     icon: <AiFillHtml5 />,
                     href: '/front-end/html',
-                    imgId:'html',
                 },
                 {
                     text: 'CSS',
                     icon: <FaCss3Alt />,
                     href: '/front-end/css',
-                    imgId:'css',
                 },
             ],
+            isActive: false,
         },
         {
             title:'Linguagens de programação',
@@ -35,7 +34,7 @@ function FrontEnd() {
                 {
                     text:'Javascript',
                     icon: <IoLogoJavascript />,
-                    herf:'/front-end/javascript'
+                    href:'/front-end/javascript',
                 }
             ],
             isActive: false,
@@ -58,12 +57,39 @@ function FrontEnd() {
         },
     ]
 
+    const shortcuts = [
+        {
+            title: 'Formik',
+            href: 'https://formik.org/docs/overview',
+            text: 'Uma pequena biblioteca que te ajuda na criação de formulários.',
+            img:'formik'
+        },
+        {
+            title: 'Ícones React',
+            href: 'https://react-icons.github.io/react-icons',
+            text: 'Inclua ícones populares em seus projetos React facilmente com react-icons.',
+            img:'reacticons'
+        },
+        {
+            title: 'Toastify',
+            href: 'https://fkhadra.github.io/react-toastify/introduction',
+            text: 'Uma biblioteca popular para exibir notificações ou mensagens temporárias.',
+            img:'toastify'
+        },
+        {
+            title: 'Router',
+            href: 'https://reactrouter.com/en/main',
+            text: 'Uma biblioteca popular para gerenciamento de rotas em aplicações web React',
+            img:'router'
+        },
+    ]
+
     return (
         <>
-            <Menu links={links} alt='Secção front-end' />
+            <Menu links={links} alt='Secção front-end'  shortcuts={shortcuts} />
             <NavLinks links={links} />
             <Routes>
-                <Route path='/html' element={<HtmlPage />} />
+                <Route path='/html/*' element={<HtmlPage />} />
             </Routes>
 
         </>

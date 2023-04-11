@@ -49,6 +49,7 @@
     background-color: var(--red);
     animation: move-left .3s forwards;
 }
+
 @keyframes move-left {
     0%{
         margin-left: -20px;

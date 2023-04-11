@@ -96,8 +96,8 @@
     background-color: var(--red);
     color: var(--white);
     border-radius: 50%;
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -107,6 +107,7 @@
     padding: 2px;
     transition: background-color .2s ease;
   }
+
   .today:hover{
     background-color: var(--blue);
   }

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import './HeaderNotebook.css';
 import { FcFolder, FcOpenedFolder } from "react-icons/fc";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function HeaderNotebook({ img, alt, folders }) {
 
-  const [openedFolderIndex, setOpenedFolderIndex] = useState(null)
+  const [openedFolderIndex, setOpenedFolderIndex] = useState(null);
+  const location = useLocation();
 
   const handleFolderClick = (index) => {
     if (openedFolderIndex === index) {
@@ -16,33 +17,39 @@ function HeaderNotebook({ img, alt, folders }) {
   }
 
   return (
-    <header className='header__notebook-container'>
-      <div className='icon__header-notebook'>
+    <header className="header__notebook-container section-notebook-anime">
+      <div className="icon__header-notebook">
         <img src={img} alt={alt} />
       </div>
-      <div className='header__notebook-folders'>
-        {folders ? (
-          <ul>
-            {folders.map((folder, i) => (
-              <li key={i} onClick={() => handleFolderClick(i)}>
-                {openedFolderIndex === i ? <FcOpenedFolder /> : <FcFolder />}
-                {folder.title}
-                {openedFolderIndex === i && (
-                  <ul>
-                    {folder.subfolders.map((subPast, j) => (
-                      <li key={j}>
-                        <Link to={subPast.path}>{subPast.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <h1>Sem pastas no momento</h1>
-        )}
-      </div>
+      {folders ? (
+        <ul className='folder__container'>
+          {folders.map((folder, i) => (
+            <li key={i}>
+              <div onClick={() => handleFolderClick(i)}>
+              <Link className="folder" to={folder.path}>
+                  {location.pathname.includes(folder.path) ? (
+                    <FcOpenedFolder size={38} />
+                  ) : (
+                    <FcFolder size={38} />
+                  )}
+                  {folder.title}
+                </Link>
+              </div>
+              {openedFolderIndex === i && (
+                <ul>
+                  {folder.subfolders.map((subPast, j) => (
+                    <li key={j} className='subfolder'>
+                      <a href={subPast.path}>{subPast.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <h1>Sem pastas no momento</h1>
+      )}
     </header>
   )
 }

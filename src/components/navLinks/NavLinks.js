@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { IoMdArrowDropdown, IoMdArrowDropup } from 'react-icons/io';
 import useClickOutside from '../../hooks/useClickOutside.js';
-import './navlinks.css'
+import './navlinks.css';
 
 function NavLinks({ links }) {
     const [items, setItems] = useState(links.map(() => ({ isOpen: false, isActive: false })));
@@ -17,7 +17,7 @@ function NavLinks({ links }) {
         );
     };
 
-    const handleClickOutside = () => {
+    const handleClickOutside = useCallback(() => {
         setItems((prevItems) =>
             prevItems.map((item) => ({
                 ...item,
@@ -25,7 +25,11 @@ function NavLinks({ links }) {
                 isActive: false,
             }))
         );
-    };
+    }, []);
+
+    const handleLinkClick = useCallback(() => {
+        handleClickOutside();
+    }, [handleClickOutside]);
 
     useClickOutside(dropdownRef, handleClickOutside);
 
@@ -34,8 +38,7 @@ function NavLinks({ links }) {
             {links.map((link, i) => (
                 <ul className={`nav__links-container`} key={i}>
                     <h1
-                        className={`nav__links-title ${items[i].isActive ? "activeNav" : "inactiveNav"
-                            }`}
+                        className={`nav__links-title ${items[i].isActive ? 'activeNav' : 'inactiveNav'}`}
                         onClick={() => handleItemClick(i)}
                     >
                         {link.title}
@@ -47,7 +50,12 @@ function NavLinks({ links }) {
                     </h1>
                     {items[i].isOpen &&
                         link.dropdownItems.map((item, j) => (
-                            <Link className="nav__links-item" key={j} to={item.href}>
+                            <Link
+                                className="nav__links-item"
+                                key={j}
+                                to={item.href}
+                                onClick={handleLinkClick}
+                            >
                                 {item.icon}
                                 {item.text}
                             </Link>

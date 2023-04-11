@@ -1,6 +1,5 @@
 .home__container{
     padding: 24px;
-    height: 100%;
     animation: animeLeft .3s ease forwards;
 }
 
@@ -8,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    height: 100%;
+    min-height: fit-content;
 }
 
 @media screen and (max-width:768px) {
@@ -26,6 +25,8 @@
         gap: 15px;
         min-height: fit-content;
     }
+
+
 }
 
 

@@ -1,82 +1,83 @@
 import React from 'react';
 import HeaderNotebook from '../../notebookComponents/HeaderNotebook';
 import htmlIcon from '../../../assets/imgs/htmlicon.webp';
+import { Route, Routes } from 'react-router-dom';
+import IntroducaoHtml from './introducaohtml/IntroducaoHtml';
 
 function HtmlPage() {
 
   const folders= [
     {
       title:'Introdução ao HTML',
+      path:'/front-end/html/intro',
       subfolders:[
         {
           title:'O que é HTML?',
-          path:'front-end/html/oqueehtml'
+          path:'#oqueehtml'
         },
         {
           title:'Estrutura básica de uma página HTML',
-          path:'front-end/html/estruturahtml'
+          path:'#estruturahtml'
         },
-        {
-          title:'Doctype, elementos HTML, head e body',
-          path:'front-end/html/elementoshtml'
-        }
       ]
     },
     {
       title:'Elementos de texto e formatação',
+      path:'/front-end/html/el',
       subfolders:[
         {
           title:'Headings (h1-h6)',
-          path:'front-end/html/h'
         },
         {
           title:'Parágrafos(p)',
-          path:'front-end/html/paragprafos'
         },
         {
           title:'Quebra de linha (br)',
-          path:'front-end/html/br'
         },
         {
           title:'Ênfase e importância (em, strong)',
-          path:'front-end/html/em'
         },
         {
           title:'Citações (q, blockquote)',
-          path:'front-end/html/q'
         },
         {
           title:'Código e pré-formatação (code, pre)',
-          path:'front-end/html/code'
         },
       ]
     },
     {
       title:'Listas e tabelas',
+      path:'/front-end/html/table',
       subfolders:[
         {
           title:'Listas ordenadas (ol)',
-          path:'front-end/html/ol'
         },
         {
-          title:'Parágrafos(p)',
-          path:'front-end/html/paragrafos'
+          title:'Listas não ordenadas (ul)',
         },
         {
-          title:'Quebra de linha (br)',
-          path:'front-end/html/quebradelinha'
+          title:'Listas de descrição (dl)',
         },
         {
-          title:'Ênfase e importância (em, strong)',
-          path:'front-end/html/enfase'
+          title:'Tabelas (table, tr, th, td)',
+        },
+      ]
+    },
+    {
+      title:'Elementos inline e block',
+      path:'/front-end/html/inlineblock',
+      subfolders:[
+        {
+          title:'Diferença entre inline e block',
         },
         {
-          title:'Citações (q, blockquote)',
-          path:'front-end/html/citacoes'
+          title:'Exemplos de elementos inline e block',
         },
         {
-          title:'Código e pré-formatação (code, pre)',
-          path:'front-end/html/preformatacao'
+          title:'Listas de descrição (dl)',
+        },
+        {
+          title:'Tabelas (table, tr, th, td)',
         },
       ]
     },
@@ -85,6 +86,9 @@ function HtmlPage() {
   return (
     <>
         <HeaderNotebook img={htmlIcon} alt='secção html' folders={folders} />
+        <Routes>
+          <Route path='/intro' element={<IntroducaoHtml />} />
+        </Routes>
     </>
   )
 }

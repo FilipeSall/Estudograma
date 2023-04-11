@@ -38,3 +38,18 @@ a{
   min-height: fit-content;
   min-width: fit-content;
 }
+
+.section-notebook-anime{
+  animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+  0%{
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100%{
+    opacity: inherit;
+    transform: translateX(inherit);
+  }
+}
