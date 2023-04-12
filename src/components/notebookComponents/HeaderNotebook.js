@@ -16,6 +16,16 @@ function HeaderNotebook({ img, alt, folders }) {
     }
   }
 
+  function handleSmoothScroll(event, targetId) {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+
   return (
     <header className="header__notebook-container section-notebook-anime">
       <div className="icon__header-notebook">
@@ -26,7 +36,7 @@ function HeaderNotebook({ img, alt, folders }) {
           {folders.map((folder, i) => (
             <li key={i}>
               <div onClick={() => handleFolderClick(i)}>
-              <Link className="folder" to={folder.path}>
+                <Link className="folder" to={folder.path}>
                   {location.pathname.includes(folder.path) ? (
                     <FcOpenedFolder size={38} />
                   ) : (
@@ -39,7 +49,14 @@ function HeaderNotebook({ img, alt, folders }) {
                 <ul className='subfolder__container'>
                   {folder.subfolders.map((subPast, j) => (
                     <li key={j} className='subfolder'>
-                      <a href={subPast.path}>{subPast.title}</a>
+                      <a
+                        href={subPast.path}
+                        data-target={subPast.path.substring(1)}
+                        onClick={(event) => handleSmoothScroll(event, subPast.path.substring(1))}
+                      >
+                        {subPast.title}
+                      </a>
+
                     </li>
                   ))}
                 </ul>

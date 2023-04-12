@@ -124,13 +124,13 @@ const Weather = () => {
           <div className="weather-info">
             <h1 className="city-name weather-status">{weatherData.name}</h1>
             <p className="temperature weather-status">
-              <FaThermometerHalf className="icon" /> {weatherData.main.temp}°C
+              <FaThermometerHalf /> {weatherData.main.temp}°C
             </p>
             <p className="humidity weather-status">
-              <FaTint className="icon" /> {weatherData.main.humidity}%
+              <FaTint /> {weatherData.main.humidity}%
             </p>
             <p className="weather-description weather-status">
-              <FaCloud className="icon" /> {weatherData.weather[0].description}
+              <FaCloud /> {weatherData.weather[0].description}
             </p>
           </div>
         </div>

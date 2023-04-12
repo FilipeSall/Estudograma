@@ -1,15 +1,16 @@
 .header__notebook-container {
     width: 100%;
+    margin: 5% 0;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
     padding: 1% 0;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .icon__header-notebook {
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 8px;
     height: 25vh;
@@ -21,30 +22,29 @@
 }
 
 .folder__container {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
-    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
 }
 
 .folder__container li {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     padding: 8px;
+    flex-direction: column;
     width: 100%;
 }
 
 .folder {
     display: flex;
     align-items: center;
-    width: 100%;
     font-size: 1.2rem;
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    background-color: #e3e3e3;
+    padding: 10px;
+    width: 25vw;
 }
 
 .folder:hover {
@@ -97,7 +97,23 @@
     .header__notebook-container {
         flex-direction: column;
     }
-    .icon__header-notebook img  {
+
+    .folder__container {
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    .folder__container > li {   
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .folder {
+        width: 70vw;
+    }
+
+    .icon__header-notebook img {
         height: auto;
         width: 25vw;
     }

@@ -6,7 +6,7 @@ import tag from '../../../../assets/imgs/tag.webp';
 function IntroducaoHtml() {
     return (
         <SectionNotebook className="section-notebook-anime">
-            <h1 id="oqueehtml">O que é HTML?</h1>
+            <h1 id="oqueehtml" className="title">O que é HTML?</h1>
             <p>
                 O HTML (Hypertext Markup Language) é a linguagem padrão utilizada na
                 criação e estruturação de páginas web. O HTML é uma linguagem que usamos para criar páginas na internet. É como um plano ou esqueleto que diz ao navegador (como o Chrome ou o Firefox) como exibir a página para o usuário. Você pode pensar nisso como se estivesse criando um documento de texto - mas em vez de ser uma página que apenas você vê, é uma página que pode ser vista por qualquer pessoa na internet.
@@ -27,7 +27,7 @@ function IntroducaoHtml() {
             <CodeBlock>
                 {`Isso é um parágrafo!`}
             </CodeBlock>
-            <p>Mas em um arquivo HTML, vocÊ precisa abrir e fechar as TAGS:</p>
+            <p>Mas em um arquivo HTML, você precisa abrir e fechar as TAGS:</p>
             <CodeBlock>
                 {`<p> Isso é um parágrafo! </p>`}
             </CodeBlock>
@@ -63,7 +63,7 @@ function IntroducaoHtml() {
                 desenvolvedores podem criar páginas web ricas em recursos e visualmente
                 atraentes para proporcionar uma excelente experiência ao usuário.
             </p>
-            <h1 id="estruturahtml">A Estrutura Básica de uma Página HTML</h1>
+            <h1 className="title" id="estruturahtml">A Estrutura Básica de uma Página HTML</h1>
             <p>A estrutura básica de um arquivo HTML é composta por duas partes principais: o cabeçalho (head) e o corpo (body).</p>
             <p>Para criar uma página HTML, você precisa seguir uma estrutura básica. A estrutura básica de uma página HTML é composta pelos seguintes elementos:</p>
             <div className="list-example syntax-highlighter-container">
@@ -88,6 +88,7 @@ function IntroducaoHtml() {
 </body>
 </html>`}
             </CodeBlock>
+        <p>Resumindo, o conteúdo que ficará visível no navegador será todo conteúdo colocado no dentro da tag {`<body></body>`}. A tag {`<head>`} serve para colocar metadados e informações do site, como título, autor e configurações especiais.</p>
         </SectionNotebook>
     );
 }

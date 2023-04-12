@@ -6,6 +6,7 @@
     align-items: center;
     animation: animeLeft 0.3s forwards ease;
     margin: 10px;
+    position: relative;
 }
 
 .nav__links-title {
@@ -31,6 +32,8 @@
     height: 40%;
     gap: 8px;
     justify-content: space-evenly;
+    position: absolute;
+    z-index: 1;
 }
 
 .nav__links-title:hover {
